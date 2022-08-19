@@ -9,7 +9,7 @@ const TravelSchema = new mongoose.Schema({
     minlength: [3, 'Must be at least 3 characters']
     },   
     place: {
-    type: Number,
+    type: String,
     },
     about: {
     type: String,
@@ -24,7 +24,7 @@ const TravelSchema = new mongoose.Schema({
 );
 
 //Define model
-const Travels = mongoose.model("Travels", TravelSchema);
+const Travels = mongoose.model("travels", TravelSchema);
 
 //Export model
 module.exports = Travels;

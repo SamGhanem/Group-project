@@ -1,4 +1,4 @@
-const TravelController = require("../controllers/safari.controller");
+const TravelController = require("../controllers/travel.controller");
 
 //Routes that go to controller 
 module.exports = app => {
@@ -6,7 +6,7 @@ module.exports = app => {
     app.get("/api/travel", TravelController.getAllTravel);
 
     //Create new- Post
-    app.post("/api/travel", TravelController.createNewTravel);
+    app.post("/api/travel/create", TravelController.createNewTravel);
 
     //Get one- Get
     app.get("/api/travel/:id", TravelController.findOneTravel);

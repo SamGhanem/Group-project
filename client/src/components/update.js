@@ -10,50 +10,46 @@ const Update = (props) => {
     const [title, setTitle] = useState("");
     const [place, setPlace] = useState("");
     const [about, setAbout] = useState('');
-    const [pictures, setPictures] = useState('');
+    const [pictures, setPictures] = useState("");
     const [errors, setErrors] = useState("");
-    const navigate = useNavigate();
+    const navigator = useNavigate();
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/travel/' + id)
             .then(res => {
-                setTitle(res.data.pets.name);
-                setPlace(res.data.pets.type);
-                setAbout(res.data.pets.description);
-                setPictures(res.data.pets.skill1);
+                console.log(res.data);
+                setTitle(res.data.title);
+                setPlace(res.data.place);
+                setAbout(res.data.about);
             })
             .catch(err => console.log(err))
     }, [])
 
-    const submitHandler =(e)=>{
+    const updateHandler =(e)=>{
         e.preventDefault();
-        axios.post("http://localhost:8000/api/travel",{
+        axios.put("http://localhost:8000/api/travel/" + id,{
             title,
             place,
             about,
             pictures,
-
-
-        
-
-        
     })
-    .then((res)=>{
-        console.log(res.data);
-        navigator("/")
+        .then((res)=>{
+            console.log(res.data);
+            navigator("/")
     })
-    .catch(err => setErrors(err.response.data.error))
+        .catch(err => setErrors(err.response.data.error.errors))
+        // console.log(setErrors(err.response.data));
 }
     
     return(
         <div>
-            <h1>Add A Trip</h1>
+            <h1>Edit your {title} Trip</h1>
             <Link to={`/`}>GO HOME</Link>
-            <form onSubmit={submitHandler}>
+            <form onSubmit={updateHandler}>
                 <div>
                 {errors.title && <span>{errors.title.message}</span>}
                     <label>Title:</label>
-                    <input onChange={(e)=> setTitle(e.target.value)} value={title}  type="text"/>
+                    <input onChange={(e)=> setTitle(e.target.value)} value={title} name="title"  type="text"/>
                 </div>
                 <div>
                 
@@ -76,7 +72,7 @@ const Update = (props) => {
                 <label>Pictures:</label>
                 <input
                     type="file"
-                    value={pictures}onChange={(e) => setPictures(e.target.value)}
+                    value={pictures} onChange={(e) => setPictures(e.target.value)}
                 />
             </div>
                 <input type="submit" value="ADD TRIP" />

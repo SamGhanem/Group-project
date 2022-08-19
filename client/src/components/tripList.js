@@ -11,7 +11,7 @@ const TripList = (props) => {
     	axios.get("http://localhost:8000/api/travel")
     	.then((res)=>{
 	    console.log(res.data);
-        setTripList(res.data.travel);
+        setTripList(res.data);
 	})
     	.catch((err)=>{
             console.log(err);
@@ -21,7 +21,7 @@ const TripList = (props) => {
     return (
         <div>
             <h1>Your trips</h1>
-            <Link to={`/travel`}>Add a new Trip</Link>
+            <Link to={`/travel/create`}>Add a new Trip</Link>
             <table >
                 <thead>
                 <tr>
@@ -42,7 +42,7 @@ const TripList = (props) => {
                     <td> {travel.title}</td>
                     <td> {travel.about} </td>
                 <td>
-                <Link to={`/travel/${travel._id}`}>Edit</Link>
+                <Link to={`/travel/update/${travel._id}`}>Edit</Link>
                 ||<Link to={`/travel/${travel._id}`}>Detials</Link>
                 </td>
                 </tr>

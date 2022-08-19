@@ -10,33 +10,24 @@ const TravelForm = ({tripList, setTripList}) => {
     const [about, setAbout] = useState('');
     const [pictures, setPictures] = useState('');
     const navigator = useNavigate();
-    //const [errors, setErrors] = useState(""); 
     const [errors, setErrors] = useState({}); 
     // {} = destructing and [ ] = is used for setting state!!!!
 
 
     const submitHandler =(e)=>{
         e.preventDefault();
-        axios.post("http://localhost:8000/api/travel",{
+        axios.post("http://localhost:8000/api/travel/create",{
             title,
             place,
             about,
             pictures,
-
-
-        
-
-        
     })
     .then((res)=>{
         console.log(res.data);
         navigator("/")
     })
-    .catch(err => setErrors(err.response.data.error))
-    
+    .catch(err => setErrors(err.response.data.error.errors))
 }
-
-
     return(
         <div>
             <h1>Add A Trip</h1>

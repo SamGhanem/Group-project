@@ -1,5 +1,4 @@
 //Import models
-const { find } = require("../models/travel.model");
 const Travel = require("../models/travel.model");
 //Send from Express with function
 

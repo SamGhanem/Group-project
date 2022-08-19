@@ -3,8 +3,8 @@ import TripList from "../components/tripList";
 
 const Home = (props)  => {
     const [tripList, setTripList]  = useState([]);
-    const removeFromDom = _id => {
-        setTripList(tripList.filter(tripList => tripList._id !== _id));
+    const removeFromDom = id => {
+        setTripList(tripList.filter(tripList => tripList._id !== id));
     }
     return(
         <>
