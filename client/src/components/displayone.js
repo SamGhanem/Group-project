@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import {useParams} from "react-router-dom";
 import {Link} from 'react-router-dom';
+// import pic from '../components/images/thiccboylogo.jpg';
+
 
 
 const DisplayOne = (props) => {
@@ -33,7 +35,7 @@ const DisplayOne = (props) => {
                 <p>About: {trip?.about}</p>
             </div>
             <div>
-                <p>Pictures: {trip?.pictures}</p>
+                <p>Pictures: {trip?.pictures} </p>
             </div>
         </div>
     )

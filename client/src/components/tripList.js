@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 
 const TripList = (props) => {
-    const {tripList, setTripList} = props
+    const {tripList, setTripList, removeFromDom} = props
     //{} = destructing and [ ] = is used for setting state!!!!
     
     useEffect(()=>{
@@ -17,6 +17,13 @@ const TripList = (props) => {
             console.log(err);
     	})
     }, [setTripList]);
+
+
+    const deleteTrip = (_id) => 
+axios.delete('http://localhost:8000/api/travel/' + _id)
+.then(res => {
+    removeFromDom(_id)
+    })
     
     return (
         <div>
@@ -43,7 +50,8 @@ const TripList = (props) => {
                     <td> {travel.about} </td>
                 <td>
                 <Link to={`/travel/update/${travel._id}`}>Edit</Link>
-                ||<Link to={`/travel/${travel._id}`}>Detials</Link>
+                ||<Link to={`/travel/${travel._id}`}>Detials</Link>||
+                <button onClick={(e) =>deleteTrip (travel._id)}>Delete</button>
                 </td>
                 </tr>
                 })
