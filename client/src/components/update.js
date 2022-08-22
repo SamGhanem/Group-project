@@ -43,17 +43,26 @@ const Update = (props) => {
     
     return(
         <div>
+            <nav class="navbar navbar-light bg-light border-bottom border-dark border-5">
+                <div class="container-fluid">
+                    <a class="navbar-brand fs-1 fst-italic" href="#">
+                        <img src="/VacaButton.webp" alt="" width="65" height="55" class="d-inline-block align-text-top mx-5" />
+                        iTrip
+                    </a>
+                </div>
+            </nav>
+        <div class="pb-5" style={{backgroundImage:"url(/grassy.jpeg)"}}>
             <h1>Edit your {title} Trip</h1>
-            <Link to={`/`}>GO HOME</Link>
-            <form onSubmit={updateHandler}>
+            <Link to={`/`}><button class="rounded-pill btn-lg btn-light btn btn-outline-dark">GO HOME</button></Link>
+            <form class="mt-5 p-5 container"onSubmit={updateHandler}>
                 <div>
                 {errors.title && <span>{errors.title.message}</span>}
-                    <label>Title:</label>
+                    <label class="text-dark fw-bolder mb-3">Title:</label>
                     <input onChange={(e)=> setTitle(e.target.value)} value={title} name="title"  type="text"/>
                 </div>
                 <div>
                 
-                    <label>Place:</label>
+                    <label class="text-dark fw-bolder mb-3">Place:</label>
                     <input
                         type="text"
                         value={place}onChange={(e) => setPlace(e.target.value)}
@@ -61,7 +70,7 @@ const Update = (props) => {
                 </div>
                 <div>
                 {errors.about && <span>{errors.about.message}</span>}
-                    <label>About:</label>
+                    <label class="text-dark fw-bolder mb-3">About:</label>
                     <input
                         type="text"
                         value={about}onChange={(e) => setAbout(e.target.value)}
@@ -69,14 +78,15 @@ const Update = (props) => {
                 </div>
                 <div>
                 
-                <label>Pictures:</label>
+                <label class="text-dark fw-bolder mb-3">Pictures:</label>
                 <input
                     type="file"
                     value={pictures} onChange={(e) => setPictures(e.target.value)}
                 />
             </div>
-                <input type="submit" value="ADD TRIP" />
+            <button class="mb-3 rounded-pill btn btn-light btn btn-outline-dark" type="submit">Add Trip</button>
             </form>
+        </div>
         </div>
     );
 

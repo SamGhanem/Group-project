@@ -4,6 +4,7 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import TravelForm from './components/form';
 import Update from './components/update';
 import DisplayOne from './components/displayone';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 function App() {

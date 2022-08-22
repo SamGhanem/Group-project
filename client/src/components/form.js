@@ -47,49 +47,59 @@ const TravelForm = ({tripList, setTripList}) => {
 
     return(
         <div>
-            <h1>Add A Trip</h1>
-            <Link to={`/`}>GO HOME</Link>
-            <form onSubmit={submitHandler}>
-                <div>
-                {errors.title && <span>{errors.title.message}</span>}
-                    <label>Title:</label>
-                    <input onChange={(e)=> setTitle(e.target.value)} value={title}  type="text"/>
+            <nav class="navbar navbar-light bg-light border-bottom border-dark border-5">
+                <div class="container-fluid">
+                    <a class="navbar-brand fs-1 fst-italic" href="#">
+                        <img src="/VacaButton.webp" alt="" width="65" height="55" class="d-inline-block align-text-top mx-5" />
+                        iTrip
+                    </a>
                 </div>
-                <div>
+            </nav>
+            <div class="pb-5" style={{backgroundImage:"url(/destinations.jpeg)"}}>
+                <h1 class="text-light">Add A Trip</h1>
+                <Link to={`/`}><button class="rounded-pill btn-lg btn-light btn btn-outline-dark">GO HOME</button></Link>
+                <form class="mt-5 p-5 container"onSubmit={submitHandler}>
+                    <div>
+                    {errors.title && <span>{errors.title.message}</span>}
+                        <label class="fs-2 text-light fw-bolder mb-3">Title:</label>
+                        <input onChange={(e)=> setTitle(e.target.value)} value={title}  type="text"/>
+                    </div>
+                    <div>
                 
-                    <label>Place:</label>
-                    <input
-                        type="text"
-                        value={place}onChange={(e) => setPlace(e.target.value)}
-                    />
-                </div>
-                <div>
-                {errors.about && <span>{errors.about.message}</span>}
-                    <label>About:</label>
-                    <input
+                        <label class="fs-2 text-light fw-bolder mb-3">Place:</label>
+                        <input
+                            type="text"
+                            value={place}onChange={(e) => setPlace(e.target.value)}
+                        />
+                    </div>
+                    <div>
+                    {errors.about && <span>{errors.about.message}</span>}
+                        <label class="fs-2 text-light fw-bolder mb-3">About:</label>
+                        <input
                         type="text"
                         value={about}onChange={(e) => setAbout(e.target.value)}
-                    />
-                </div>
-                <div>
+                        />
+                    </div>
+                    <div>
                 
-                <label>Pictures:</label>
-                <input type="file" ref={fileInputRef} value={picturesText} accept="image/png, image/gif, image/jpeg" 
-                onChange={(e) =>{
-                    const file = e.target.files[0];
-                    if (file && file.type.substring(0, 5) === "image") {
-                        setPictures(file);
-                    } else {
-                        setPictures(null);
-                    }
-                    setPicturesText(e.target.value)
-                }} />
+                    <label class="fs-2 text-light fw-bolder mb-3">Pictures:</label>
+                    <input type="file" ref={fileInputRef} value={picturesText} accept="image/png, image/gif, image/jpeg" 
+                    onChange={(e) =>{
+                        const file = e.target.files[0];
+                        if (file && file.type.substring(0, 5) === "image") {
+                            setPictures(file);
+                        } else {
+                            setPictures(null);
+                        }
+                        setPicturesText(e.target.value)
+                    }} />
+                    </div>
+                        <button class="mb-3 rounded-pill btn btn-light btn btn-outline-dark" type="submit">Add Trip</button>
+                    <div>
+                        <img src={preview} onClick={() => {setPictures(null); }} />
+                    </div>
+                </form>
             </div>
-                <input type="submit" value="ADD TRIP" />
-            <div>
-                <img src={preview} onClick={() => {setPictures(null); }} />
-            </div>
-            </form>
         </div>
     );
 }
