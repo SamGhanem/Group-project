@@ -27,57 +27,57 @@ const DisplayOne = (props) => {
 
     return (
         <div>
-            <nav class="navbar navbar-light bg-light border-bottom border-dark border-5">
-                <div class="container-fluid">
-                    <a class="navbar-brand fs-1 fst-italic" href="#">
-                        <img src="/VacaButton.webp" alt="" width="65" height="55" class="d-inline-block align-text-top mx-5" />
+            <nav className="navbar navbar-light bg-light border-bottom border-dark border-5">
+                <div className="container-fluid">
+                    <a className="navbar-brand fs-1 fst-italic" href="#">
+                        <img src="/VacaButton.webp" alt="" width="65" height="55" className="d-inline-block align-text-top mx-5" />
                         iTrip
                     </a>
                 </div>
             </nav>
-            <div class="pb-5" style={{backgroundImage:"url(/castle.jpeg)"}}>
+            <div className="pb-5" style={{backgroundImage:"url(/castle.jpeg)"}}>
                 <h1>Details From Your {trip?.title} Trip</h1>
-                <Link to={`/`}><button class="mb-3 rounded-pill btn-lg btn-light btn btn-outline-dark">GO HOME</button></Link>
+                <Link to={`/`}><button className="mb-3 rounded-pill btn-lg btn-light btn btn-outline-dark">GO HOME</button></Link>
 
-                <div class="row d-flex justify-content-center mb-3">
-                    <div class="col-sm-3">
-                        <div class="card bg-secondary text-light">
-                            <div class="card-body">
-                                <h5 class="card-title fst-italic">Title Of My Trip</h5>
-                                <p class="card-text fs-3">{trip?.title}</p>
+                <div className="row d-flex justify-content-center mb-3">
+                    <div className="col-sm-3">
+                        <div className="card bg-secondary text-light">
+                            <div className="card-body">
+                                <h5 className="card-title fst-italic">Title Of My Trip</h5>
+                                <p className="card-text fs-3">{trip?.title}</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="row d-flex justify-content-center mb-3">
-                    <div class="col-sm-3">
-                        <div class="card bg-secondary text-light">
-                            <div class="card-body">
-                                <h5 class="card-title fst-italic">Where Did I Go?</h5>
-                                <p class="card-text fs-3">{trip?.place}</p>
+                <div className="row d-flex justify-content-center mb-3">
+                    <div className="col-sm-3">
+                        <div className="card bg-secondary text-light">
+                            <div className="card-body">
+                                <h5 className="card-title fst-italic">Where Did I Go?</h5>
+                                <p className="card-text fs-3">{trip?.place}</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="row d-flex justify-content-center mb-3">
-                    <div class="col-sm-3">
-                        <div class="card bg-secondary text-light">
-                            <div class="card-body">
-                                <h5 class="card-title fst-italic">What Did I Do?</h5>
-                                <p class="card-text fs-3">{trip?.about}</p>
+                <div className="row d-flex justify-content-center mb-3">
+                    <div className="col-sm-3">
+                        <div className="card bg-secondary text-light">
+                            <div className="card-body">
+                                <h5 className="card-title fst-italic">What Did I Do?</h5>
+                                <p className="card-text fs-3">{trip?.about}</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="row d-flex justify-content-center mb-3">
-                    <div class="col-sm-3">
-                        <div class="card bg-secondary text-light">
-                            <div class="card-body">
-                                <h5 class="card-title fst-italic">Here Are My Memories</h5>
-                                <p class="card-text fs-3">{trip?.pictures}</p>
+                <div className="row d-flex justify-content-center mb-3">
+                    <div className="col-sm-3">
+                        <div className="card bg-secondary text-light">
+                            <div className="card-body">
+                                <h5 className="card-title fst-italic">Here Are My Memories</h5>
+                                <img style={{width: "400px"}} className=" card-text fs-3" src={trip?.pictures} alt="pic"  />
                             </div>
                         </div>
                     </div>
