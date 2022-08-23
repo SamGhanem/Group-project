@@ -31,17 +31,17 @@ const TravelForm = ({tripList, setTripList}) => {
     })
     .catch(err => {console.log(err); setErrors(err.response.data.error.errors)})
 }
-    useEffect(() => {
-        if (pictures) {
-        const reader = new FileReader();
-        reader.onloadend = () => {
-            setPreview(reader.result);
-        };
-        reader.readAsDataURL(pictures);
-        } else {
-        setPreview(null);
-        }
-    }, [pictures]);
+    // useEffect(() => {
+    //     if (pictures) {
+    //     const reader = new FileReader();
+    //     reader.onloadend = () => {
+    //         setPreview(reader.result);
+    //     };
+    //     reader.readAsDataURL(pictures);
+    //     } else {
+    //     setPreview(null);
+    //     }
+    // }, [pictures]);
 
 
 
@@ -80,7 +80,7 @@ const TravelForm = ({tripList, setTripList}) => {
                         value={about}onChange={(e) => setAbout(e.target.value)}
                         />
                     </div>
-                    <div>
+                    {/* <div>
                 
                     <label class="fs-2 text-light fw-bolder mb-3">Pictures:</label>
                     <input type="file" ref={fileInputRef} value={picturesText} accept="image/png, image/gif, image/jpeg" 
@@ -93,11 +93,11 @@ const TravelForm = ({tripList, setTripList}) => {
                         }
                         setPicturesText(e.target.value)
                     }} />
-                    </div>
+                    </div> */}
                         <button class="mb-3 rounded-pill btn btn-light btn btn-outline-dark" type="submit">Add Trip</button>
-                    <div>
+                    {/* <div>
                         <img src={preview} onClick={() => {setPictures(null); }} />
-                    </div>
+                    </div> */}
                 </form>
             </div>
         </div>
