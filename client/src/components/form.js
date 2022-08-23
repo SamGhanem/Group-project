@@ -8,7 +8,7 @@ const TravelForm = ({tripList, setTripList}) => {
     const [title, setTitle] = useState("");
     const [place, setPlace] = useState("");
     const [about, setAbout] = useState('');
-    const [pictures, setPictures] = useState("");
+    const [pictures, setPictures] = useState([]);
     const [picturesText, setPicturesText] = useState('');
     const [preview, setPreview] = useState('');
     const fileInputRef = useRef('');
