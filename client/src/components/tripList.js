@@ -38,12 +38,12 @@ axios.delete('http://localhost:8000/api/travel/' + _id)
                     </a>
                 </div>
             </nav>
-            <div>
-                    <ImageSlider images= {images} />
-                </div>
             <div className="pb-5" style={{backgroundImage:"url(/Background.jpeg)"}}>
                 <h1>Your trips</h1>
                 <Link to={`/travel/create`}><button className="rounded-pill btn-lg btn-light btn btn-outline-dark">Add a new Trip</button></Link>
+                <div>
+                    <ImageSlider images= {images} />
+                </div>
                 <table className='table table-striped border-primary table-hover bg-light container mt-5 p-5'>
                     <thead className='bg-danger'>
                     <tr>
