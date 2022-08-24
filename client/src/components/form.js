@@ -83,7 +83,7 @@ const TravelForm = ({tripList, setTripList}) => {
                     <div>
                 
                     <label className="fs-2 text-light fw-bolder mb-3">Pictures:</label>
-                    <input type="file" ref={fileInputRef} value={picturesText} multiple accept="image/png, image/gif, image/jpeg " 
+                    <input type="file" ref={fileInputRef} value={picturesText}  multiple accept="image/png, image/gif, image/jpeg, image/jpg  " 
                     onChange={(e) =>{
                         // const file = e.target.files[0];
                         // if (file && file.type.substring(0, 5) === "image") {
@@ -105,7 +105,7 @@ const TravelForm = ({tripList, setTripList}) => {
                     </div>
                         <button className="mb-3 rounded-pill btn btn-light btn btn-outline-dark" type="submit">Add Trip</button>
                     <div>
-                        <img src={pictures} style={{width: "400px"}}  alt="pics" />
+                        <img  src={pictures} style={{width: "400px"}}  alt="pics" />
                     </div>
                 </form>
             </div>
