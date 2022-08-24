@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import ImageSlider from '../components/imageSlider';
+import images from '../images/images';
 
 
 const TripList = (props) => {
@@ -28,6 +30,7 @@ axios.delete('http://localhost:8000/api/travel/' + _id)
     return (
         <div>
             <nav className="navbar navbar-light bg-light border-bottom border-dark border-5">
+                
                 <div className="container-fluid">
                     <a className="navbar-brand fs-1 fst-italic" href="#">
                         <img src="/VacaButton.webp" alt="" width="65" height="55" className="d-inline-block align-text-top mx-5" />
@@ -35,6 +38,9 @@ axios.delete('http://localhost:8000/api/travel/' + _id)
                     </a>
                 </div>
             </nav>
+            <div>
+                    <ImageSlider images= {images} />
+                </div>
             <div className="pb-5" style={{backgroundImage:"url(/Background.jpeg)"}}>
                 <h1>Your trips</h1>
                 <Link to={`/travel/create`}><button className="rounded-pill btn-lg btn-light btn btn-outline-dark">Add a new Trip</button></Link>
