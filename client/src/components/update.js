@@ -4,7 +4,6 @@ import {useNavigate} from "react-router-dom";
 import {useParams} from "react-router-dom";
 import {Link} from 'react-router-dom';
 
-
 const Update = (props) => {
     const { id } = useParams(); //this process is identical to the one we used with our Details.js component
     const [title, setTitle] = useState("");
@@ -104,10 +103,6 @@ const Update = (props) => {
         </div>
         </div>
     );
-
-
-
-
 }
 
 export default Update

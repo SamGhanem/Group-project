@@ -11,6 +11,5 @@ const Home = (props)  => {
         <TripList tripList={tripList} setTripList={setTripList} removeFromDom={removeFromDom} />
         </>
     )
-
 }
 export default Home;

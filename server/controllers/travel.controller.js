@@ -1,9 +1,7 @@
 //Import models
 
-
 const multer = require('multer');
 const Travel = require("../models/travel.model");
-
 
 //Send from Express with function
 
@@ -67,7 +65,6 @@ module.exports.deleteOneTravel = (req, res) => {
     .catch((err) => {
         res.status(400).json({ message: 'There is an error in the deleting of this Travel', error: err})
     });}
-
 
     // module.exports.storage = multer.diskStorage({
     //     destination: (req, file, cb) => {

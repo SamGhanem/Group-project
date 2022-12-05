@@ -4,14 +4,9 @@ import {useParams} from "react-router-dom";
 import {Link} from 'react-router-dom';
 // import pic from '../components/images/thiccboylogo.jpg';
 
-
-
-
 const DisplayOne = (props) => {
     const {id} = useParams();
     const [trip, setTrip] = useState("")
-
-
 
     useEffect(() => {
         axios.get("http://localhost:8000/api/travel/" + id)
@@ -22,7 +17,6 @@ const DisplayOne = (props) => {
             .catch( err => console.log(err) )
     }, [])
     
-
 
     return (
         <div>
@@ -86,8 +80,6 @@ const DisplayOne = (props) => {
             </div>
         </div>
     )
-
-
 }
 
 export default DisplayOne;

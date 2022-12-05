@@ -6,7 +6,6 @@ import Update from './components/update';
 import DisplayOne from './components/displayone';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-
 function App() {
   return (
     <div className="App">

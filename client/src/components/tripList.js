@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom';
 import ImageSlider from '../components/imageSlider';
 import images from '../images/images';
 
-
 const TripList = (props) => {
     const {tripList, setTripList, removeFromDom} = props
     //{} = destructing and [ ] = is used for setting state!!!!

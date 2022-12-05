@@ -3,7 +3,6 @@ import axios from "axios";
 import {useNavigate} from "react-router-dom";
 import {Link} from 'react-router-dom';
 
-
 const TravelForm = ({tripList, setTripList}) => {
     const [title, setTitle] = useState("");
     const [place, setPlace] = useState("");
@@ -15,7 +14,6 @@ const TravelForm = ({tripList, setTripList}) => {
     const navigator = useNavigate();
     const [errors, setErrors] = useState({}); 
     // {} = destructing and [ ] = is used for setting state!!!!
-
 
     const submitHandler =(e)=>{
         e.preventDefault();
@@ -42,8 +40,6 @@ const TravelForm = ({tripList, setTripList}) => {
     //     setPreview(null);
     //     }
     // }, [pictures]);
-
-
 
     return(
         <div>
